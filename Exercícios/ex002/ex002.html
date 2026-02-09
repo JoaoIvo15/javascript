@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verificador de idade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="config" class="modo">
+
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+
+    <main class="container">
+        <div>
+            <label for="ano" style="font-weight: 600;">Digite o ano de Nascimento:</label>
+            <input type="number" name="" id="ano">
+        </div>
+
+        <div>
+            <p style="display: inline; font-weight: 600;">Sexo:</p>
+
+            <label for="masculino">Masculinho</label>
+            <input type="radio" name="sexo" id="masculino" value="masculino" checked    >
+
+            <label for="feminino">Feminino</label>
+            <input type="radio" name="sexo" id="feminino" value="feminino">
+        </div>
+
+        <button type="button" value="verificar" id="verificar">Verificar</button>
+
+        <h2 id="resposta"></h2>
+    </main>
+
+    <footer>
+        <h3>@ivão</h3>
+    </footer>
+
+    <script>
+        
+        document.getElementById('verificar').addEventListener('click', function() {
+            const year = new Date()
+            const ano_atual = year.getFullYear()
+            const ano = document.getElementById('ano').value
+            const sexo = document.querySelector('input[name="sexo"]:checked').value
+            const idade = ano_atual - Number(ano)
+
+            if (sexo == "masculino"){
+                document.getElementById('resposta').innerText = `É um homem de ${idade} anos`
+            } else{
+                document.getElementById('resposta').innerText = `É uma mulher de ${idade} anos`
+            }
+        })
+    </script>
+</body>
+</html>

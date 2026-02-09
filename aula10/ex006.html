@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(0, 174, 255);
+            color: white;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            font: normal 1em Arial;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="Clicar()">
+        interaja com essa div
+    </div>
+
+    <script>
+        function Clicar(){
+            let a = document.getElementById('area')
+            a.innerText = 'Clicaste'
+        }
+    </script>
+</body>
+</html>

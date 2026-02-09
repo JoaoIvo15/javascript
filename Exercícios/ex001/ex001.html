@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="config" class="modo">
+
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+
+    <main class="container">
+        <h2 id="horas">horas</h2>
+        <div class="ajuste"><img src="" alt="" id="imagem"></div>
+    </main>
+
+    <footer>
+        <h3>@ivão</h3>
+    </footer>
+
+    <script>
+        const agora = new Date()
+        const hora = agora.getHours()
+
+        if (hora < 6){
+            document.getElementById('config').className = "madruga"
+            document.getElementById('imagem').src = "imagens/madrugada.png"
+        }else if (hora < 12){
+            document.getElementById('config').className = "dia"
+            document.getElementById('imagem').src = "imagens/dia.webp"
+        }else if (hora < 18){
+            document.getElementById('config').className = "tarde"
+            document.getElementById('imagem').src = "imagens/tarde.png"
+        }else {
+            document.getElementById('config').className = "noite"
+            document.getElementById('imagem').src = "imagens/noite.png"
+        }
+
+        document.getElementById('horas').innerText = `Agora são ${hora} horas`
+
+    </script>
+</body>
+</html>
