@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Vamos Contar</h1>
+    </header>
+
+    <main class="container">
+        <div>
+            <p>Início:</p>
+            <input type="number" name="" id="inicio">
+        </div>
+
+
+        <div>
+            <p>Fim:</p>
+            <input type="number" name="" id="fim">
+        </div>
+
+
+        <div>
+            <p>Passo:</p>
+            <input type="number" name="" id="passo">
+        </div>
+
+
+        <div>
+            <button type="button" onclick="Contar()">Contar</button>
+        </div>
+
+        <div>
+            <h2>Contando:</h2>
+        </div>
+
+        <div id="resposta"></div>
+    </main>
+
+    <footer>
+        <h3>&copy; @ivão</h3>
+    </footer>
+
+    <script>
+        
+
+        function Contar(){
+
+            if (Number(document.getElementById('passo').value) == 0 || document.getElementById('passo').value == null){
+                alert('Preencha o campo "Espaço com um valor inteiro maior que 0"')
+                return
+            } 
+
+            let inicio = Number(document.getElementById('inicio').value)
+            const fim = Number(document.getElementById('fim').value)
+            const passo = Number(document.getElementById('passo').value)
+            let resposta = ``
+            while (inicio <= fim){
+                resposta += `${inicio} 👉 `
+                inicio += passo 
+            }
+
+            resposta += ` 🏁`
+
+            document.getElementById('resposta').innerText = resposta
+        }
+    </script>
+</body>
+</html>
